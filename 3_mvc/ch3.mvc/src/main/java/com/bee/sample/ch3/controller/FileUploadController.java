@@ -1,9 +1,5 @@
 package com.bee.sample.ch3.controller;
 
-import java.io.IOException;
-import java.io.InputStream;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,12 +7,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.bee.sample.ch3.service.UserService;
+import java.io.IOException;
+import java.io.InputStream;
 
 @Controller
 @RequestMapping("/upload")
 public class FileUploadController {
-	
+
+	/**
+	 * 多文件上传时使用MultipartFile[] files
+	 * @param name
+	 * @param file
+	 * @return
+	 * @throws IOException
+	 */
 	@PostMapping("/form")
 	@ResponseBody
 	public String handleFormUpload(@RequestParam("name") String name, 

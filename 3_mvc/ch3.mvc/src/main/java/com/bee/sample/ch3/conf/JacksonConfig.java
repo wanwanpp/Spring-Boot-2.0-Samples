@@ -1,13 +1,15 @@
 package com.bee.sample.ch3.conf;
 
-import java.text.SimpleDateFormat;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.text.SimpleDateFormat;
 
+/**
+ * 可以在@Configuration注解下定义全局配置，比如注入Bean。
+ * 如下定义ObjectMapper来代替默认的。
+ */
 @Configuration
 public class JacksonConfig {
 
